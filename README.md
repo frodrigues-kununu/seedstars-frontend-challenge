@@ -3,7 +3,7 @@ Code for my seedstars frontend challenge.
 
 ##Challenge Details
 
-Frontend Engineer Challenge
+###Frontend Engineer Challenge
 ===========================
 
 The purpose of this challenge is to understand how you use HTML/CSS/Javascript. 
