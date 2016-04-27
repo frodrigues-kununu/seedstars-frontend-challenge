@@ -1,74 +1,61 @@
-angular.module('infiniteScrollWebApp', ['ngResource', 'infinite-scroll','firebase'])
-    .controller('InfiniteScrollCtrl',["$scope","$firebaseObject","$firebaseArray", "$http", function ($scope,$firebaseObject, $firebaseArray, $http) {
+angular.module('infiniteScrollWebApp', ['ngResource', 'infinite-scroll', 'firebase'])
+        .controller('InfiniteScrollCtrl', ["$scope", "HackerNewsServices", function ($scope, HackerNewsServices) {
 
-      $http.get("https://hacker-news.firebaseio.com/v0/item/8863.json")
-  .then(function(json) {
-      $scope.response = json.data.data;
-      console.log($scope.response);
-  });
+                //promisse to a $firebaseObject with the current hacker news' largest item id
+                //when the object is loaded resolve the promisse and execute either a success or error callback
+                 HackerNewsServices.getHackerNewsMaxItem().then(function (maxItemObject) {
 
-      var dataRef = new Firebase('https://hacker-news.firebaseio.com/v0/maxitem');
+                    //save the maxItem $value to a variable
+                    $scope.currentItem = parseInt(maxItemObject["$value"]);
 
-      var dataRefTop= new Firebase('https://hacker-news.firebaseio.com/v0/topstories');
+                    //array that will contain the loaded items
+                      $scope.arrayOfItems = [];
 
-      // download the data into a local object
-  var syncObject = $firebaseObject(dataRef);
+                      //function executed when the scroll reaches the bottom of the page, only defined after maxItemObject is known
+                    $scope.getMoreItems = function () {
+                      //data is being loaded
+                      $scope.isLoading = true;
 
-  syncObject.$loaded().then(function(){
-    console.log("Loaded Object:",  syncObject);
+                      //number of processed requests, used to toggle the isLoading var in order to pause infinite-scroll while new data loads
+                      var numberOfRequestsComplete = 0;
 
-    $scope.arrayOfItems = [];
+                      //load 10 items at a time
+                        for (var i = 0; i < 10; i++) {
 
-    for(var i = 0; i < 5; i++){
+                          //next item id to load
+                            var nextId = $scope.currentItem;
 
-      var nextValue = parseInt(syncObject["$value"]) - i;
+                            //update currentItem variable
+                            $scope.currentItem--;
 
-      alert(nextValue);
-
-      var url = new Firebase('https://hacker-news.firebaseio.com/v0/item/' + nextValue);
-
-      var data =  $firebaseObject(url);
-
-      data.$loaded().then(function(){
-        $scope.arrayOfItems.push(data);
-      console.log(data);
-      })
-
-    }
-
-  });
-
-// create a query for the most recent 25 messages on the server
-  $scope.topStories =  $firebaseArray(dataRefTop);
-
-  // create a query for the most recent 25 messages on the server
-  var query = dataRefTop.orderByChild("timestamp").limitToLast(25);
-  // the $firebaseArray service properly handles database queries as well
-  $scope.filteredMessages = $firebaseArray(query);
-
-  // synchronize the object with a three-way data binding
-        syncObject.$bindTo($scope, "data");
-
-
-var lastLoadedItem = 0;
-var loadedStories = [];
-
-
-//watch data to see when it updated
-$scope.$watch("data", function(newVal, oldVal){
-  console.log(newVal);
-
-if(newVal !== oldVal !== undefined){
-
-var counter = 5;
-
-/*while(counter > 0){
-
-
-
-}*/
-}
-
-});
-
-  }]);
+                            //call the service that returns a promisse to a $firebaseObject with the item id "nextId"
+                            HackerNewsServices.getFirebaseItem(nextId).then(function (success) {
+                                console.log("FACTORY for id : ",nextId, ": ", success);
+                                $scope.arrayOfItems.push(success);
+                            }, function(error){
+                              console.log("Could not load data for item id: ", nextId);
+                            }).finally(function(){
+                              //increment numberOfRequestsComplete regardless of the promisse resolution
+                              numberOfRequestsComplete++;
+                              if(numberOfRequestsComplete === 10) $scope.isLoading = false;
+                            });
+                          }
+                    };
+                }, function(error){
+                  console.log("There was an error loading the maxItem Object");
+                });
+            }])
+        .factory("HackerNewsServices", function ($firebaseObject) {
+            return {
+              //function that returns a promisse that will contain hacker news current largest item id
+              getHackerNewsMaxItem: function () {
+                  var requestUrl = new Firebase('https://hacker-news.firebaseio.com/v0/maxitem');
+                  return $firebaseObject(requestUrl).$loaded();
+              },
+              //function that returns a promisse that will contain hacker news item "item"
+                getFirebaseItem: function (item) {
+                    var requestUrl = new Firebase('https://hacker-news.firebaseio.com/v0/item/' + item);
+                    return $firebaseObject(requestUrl).$loaded();
+                }
+            };
+        });
