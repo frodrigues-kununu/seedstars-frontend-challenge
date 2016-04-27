@@ -6,8 +6,8 @@ Code for my seedstars frontend challenge.
 ###Frontend Engineer Challenge
 ===========================
 
-The purpose of this challenge is to understand how you use HTML/CSS/Javascript. 
-Please note that both challenges are mandatory. 
+The purpose of this challenge is to understand how you use HTML/CSS/Javascript.
+Please note that both challenges are mandatory.
 
 
 Challenge 1 - Javascript
@@ -41,6 +41,7 @@ Good luck!
 
 ###Challenge 1 - Javascript
 
+I assumed that i could use third party libraries and directives. I used ngInfiniteScroll (https://github.com/sroze/ngInfiniteScroll) to implement the infinite scroll functionality.
+I also assumed that Hacker News items can be either stories, comments, jobs, Ask HNs and polls as stated in the Items section of the Hacker News API page (https://github.com/HackerNews/API).
 
 ###Challenge 2 - Html/CSS
-

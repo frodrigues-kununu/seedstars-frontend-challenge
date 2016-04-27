@@ -39,12 +39,12 @@
 <body ng-controller="InfiniteScrollCtrl">
 
     <div class="container">
-        <h1>Hacker News</h1>
+        <h1 class="text-success">Hacker News</h1>
         <div class="row">
             <div class="col-md-12">
                 <div class="news-container">
                     <div infinite-scroll="getMoreItems()" infinite-scroll-distance="0" infinite-scroll-disabled="isLoading" ng-show="arrayOfItems.length > 0">
-                        <div class="panel panel-default" ng-repeat="item in arrayOfItems">
+                        <div class="panel panel-success" ng-repeat="item in arrayOfItems">
                             <div class="panel-heading">{{item.by}}</div>
                             <div class="panel-body">
                                 {{ item.type }} id: {{item.$id}}

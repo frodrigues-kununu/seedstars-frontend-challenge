@@ -30,7 +30,6 @@ angular.module('infiniteScrollWebApp', ['ngResource', 'infinite-scroll', 'fireba
 
                             //call the service that returns a promisse to a $firebaseObject with the item id "nextId"
                             HackerNewsServices.getFirebaseItem(nextId).then(function (success) {
-                                console.log("FACTORY for id : ",nextId, ": ", success);
                                 $scope.arrayOfItems.push(success);
                             }, function(error){
                               console.log("Could not load data for item id: ", nextId);
