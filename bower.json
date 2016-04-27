@@ -1,0 +1,30 @@
+{
+  "name": "seedstars-frontend-challenge",
+  "description": "Code for my seedstars frontend challenge.",
+  "main": "gulpfile.js",
+  "authors": [
+    "Fabio Rodrigues"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "seedstars",
+    "frontend"
+  ],
+  "homepage": "https://github.com/scorchloh/seedstars-frontend-challenge",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^2.2.3",
+    "angular": "^1.5.5",
+    "bootstrap": "^3.3.6",
+    "ngInfiniteScroll": "^1.2.2",
+    "angular-resource": "^1.5.5",
+    "firebase": "^2.4.2",
+    "angularfire": "^1.2.0"
+  }
+}
