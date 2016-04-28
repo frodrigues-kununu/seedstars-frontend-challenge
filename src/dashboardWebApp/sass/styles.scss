@@ -1,0 +1,113 @@
+// import fonts
+@import "fonts"; //variables
+//font-colors
+$white-font: white;
+$gray-font: #959595;
+$green-font: #16967A;
+$red-font: #E44235;
+$purple-font: #8D52BA; //background-colors
+$light-gray-background-color: #F1F1F1;
+$normal-purple-background-color: #77439E;
+$dark-purple-background-color: #77439E; //header styles
+header {
+    position: relative;
+    background-color: $dark-purple-background-color;
+    height: 56px;
+    line-height: 56px;
+    text-align: center;
+    .title {
+        font-family: ProximaNovaSoft-Regular;
+        font-size: 20px;
+        color: $white-font;
+        line-height: 100%;
+    }
+    .menu-button {
+        position: absolute;
+    }
+}
+//Balance info styles
+.balance-info-container {
+    background-color: $normal-purple-background-color;
+}
+.balance-info-title {
+    font-family: ProximaNovaSoft-Regular;
+    font-size: 18px;
+    color: $white-font;
+    line-height: 100%;
+}
+.balance-info-primary {
+    font-family: ProximaNovaSoft-Semibold;
+    font-size: 32px;
+    color: $white-font;
+    line-height: 119%;
+}
+.balance-info-secondary {
+    font-family: ProximaNovaSoft-Semibold;
+    font-size: 24px;
+    color: $white-font;
+    line-height: 121%;
+}
+//latest transactions styles
+.latest-transactions-header {
+    background-color: $dark-purple-background-color;
+    height: 42px;
+}
+.latest-transaction-content {
+    &:nth-child(odd) {
+        background-color: $light-gray-background-color;
+    }
+}
+.transaction-name {
+    font-family: ProximaNovaSoft-Semibold;
+    font-size: 16px;
+    color: $gray-font;
+    line-height: 100%;
+}
+.transaction-value {
+    font-family: ProximaNovaSoft-Semibold;
+    font-size: 14px;
+    color: $gray-font;
+    line-height: 115%;
+    opacity: 0.6;
+}
+.transaction-date {
+    font-family: ProximaNovaSoft-Medium;
+    font-size: 14px;
+    line-height: 115%;
+    opacity: 0.6;
+    .credit {
+        color: $green-font;
+    }
+    .debit {
+        color: $red-font;
+    }
+}
+.transaction-type {
+    font-family: ProximaNovaSoft-Medium;
+    font-size: 14px;
+    color: $gray-font;
+    line-height: 115%;
+}
+//menu styles
+.menu {
+    position: absolute;
+    top: 0;
+    left: -294px;
+    width: 294px;
+    transition: left 0.5s;
+    &.open {
+        left: 0;
+    }
+    .menu-header {
+        height: 153px;
+        background: url("../assets/images/SideMenu/menu-header-bg.png");
+        background-size: 294px 153px;
+        background-repeat:no-repeat;
+    }
+    .menu-content {
+        height: 568px;
+    }
+    .menu-item {
+        height: 55px;
+    }
+}

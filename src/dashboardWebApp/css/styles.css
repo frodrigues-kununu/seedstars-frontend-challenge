@@ -1,0 +1,137 @@
+@font-face {
+  font-family: ProximaNovaSoft-Bold;
+  src: url("../assets/fonts/ProximaNovaSoft/ProximaNovaSoft-Bold.otf") format("opentype");
+}
+
+@font-face {
+  font-family: ProximaNovaSoft-Medium;
+  src: url("../assets/fonts/ProximaNovaSoft/ProximaNovaSoft-Medium.otf") format("opentype");
+}
+
+@font-face {
+  font-family: ProximaNovaSoft-Regular;
+  src: url("../assets/fonts/ProximaNovaSoft/ProximaNovaSoft-Regular.otf") format("opentype");
+}
+
+@font-face {
+  font-family: ProximaNovaSoft-Semibold;
+  src: url("../assets/fonts/ProximaNovaSoft/ProximaNovaSoft-Semibold.otf") format("opentype");
+}
+
+header {
+  position: relative;
+  background-color: #77439E;
+  height: 56px;
+  line-height: 56px;
+  text-align: center;
+}
+
+header .title {
+  font-family: ProximaNovaSoft-Regular;
+  font-size: 20px;
+  color: white;
+  line-height: 100%;
+}
+
+header .menu-button {
+  position: absolute;
+}
+
+.balance-info-container {
+  background-color: #77439E;
+}
+
+.balance-info-title {
+  font-family: ProximaNovaSoft-Regular;
+  font-size: 18px;
+  color: white;
+  line-height: 100%;
+}
+
+.balance-info-primary {
+  font-family: ProximaNovaSoft-Semibold;
+  font-size: 32px;
+  color: white;
+  line-height: 119%;
+}
+
+.balance-info-secondary {
+  font-family: ProximaNovaSoft-Semibold;
+  font-size: 24px;
+  color: white;
+  line-height: 121%;
+}
+
+.latest-transactions-header {
+  background-color: #77439E;
+  height: 42px;
+}
+
+.latest-transaction-content:nth-child(odd) {
+  background-color: #F1F1F1;
+}
+
+.transaction-name {
+  font-family: ProximaNovaSoft-Semibold;
+  font-size: 16px;
+  color: #959595;
+  line-height: 100%;
+}
+
+.transaction-value {
+  font-family: ProximaNovaSoft-Semibold;
+  font-size: 14px;
+  color: #959595;
+  line-height: 115%;
+  opacity: 0.6;
+}
+
+.transaction-date {
+  font-family: ProximaNovaSoft-Medium;
+  font-size: 14px;
+  line-height: 115%;
+  opacity: 0.6;
+}
+
+.transaction-date .credit {
+  color: #16967A;
+}
+
+.transaction-date .debit {
+  color: #E44235;
+}
+
+.transaction-type {
+  font-family: ProximaNovaSoft-Medium;
+  font-size: 14px;
+  color: #959595;
+  line-height: 115%;
+}
+
+.menu {
+  position: absolute;
+  top: 0;
+  left: -294px;
+  width: 294px;
+  -webkit-transition: left 0.5s;
+  transition: left 0.5s;
+}
+
+.menu.open {
+  left: 0;
+}
+
+.menu .menu-header {
+  height: 153px;
+  background: url("../assets/images/SideMenu/menu-header-bg.png");
+  background-size: 294px 153px;
+  background-repeat: no-repeat;
+}
+
+.menu .menu-content {
+  height: 568px;
+}
+
+.menu .menu-item {
+  height: 55px;
+}

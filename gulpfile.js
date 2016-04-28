@@ -1,6 +1,9 @@
-var input = './src/infiniteScrollWebApp/sass/*.scss';
-var output = './src/infiniteScrollWebApp/css';
+var gulp = require('gulp');
+var sass = require('gulp-sass');
 var autoprefixer = require('gulp-autoprefixer');
+
+var input = './src/dashboardWebApp/sass/*.scss';
+var output = './src/dashboardWebApp/css';
 
 //sass options
 var sassOptions = {
@@ -8,7 +11,7 @@ var sassOptions = {
   outputStyle: 'expanded'
 };
 
-//compile sass for the infinite scroll app
+//compile sass for the dashboard app
 gulp.task('sass', function () {
   return gulp
     .src(input)
