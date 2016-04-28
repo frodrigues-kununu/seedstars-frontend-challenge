@@ -41,7 +41,7 @@ Good luck!
 
 ###Challenge 1 - Javascript
 
-I assumed that i could use third party libraries and directives. I used ngInfiniteScroll (https://github.com/sroze/ngInfiniteScroll) to implement the infinite scroll functionality.
-I also assumed that Hacker News items can be either stories, comments, jobs, Ask HNs and polls as stated in the Items section of the Hacker News API page (https://github.com/HackerNews/API).
+* I assumed that i could use third party libraries and directives. I used ngInfiniteScroll (https://github.com/sroze/ngInfiniteScroll) to implement the infinite scroll functionality.
+* I also assumed that Hacker News items can be either stories, comments, jobs, Ask HNs and polls as stated in the Items section of the Hacker News API page (https://github.com/HackerNews/API#items).
 
 ###Challenge 2 - Html/CSS
