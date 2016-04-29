@@ -37,6 +37,9 @@ challenge let us know and share your thoughts on the problems/solutions.
 Good luck!
 
 
+##Overall Considerations
+* I user bower to manage my frontend dependencies and npm to manage my gulp modules.
+
 ##Challenge Considerations
 
 ###Challenge 1 - Javascript
@@ -45,3 +48,8 @@ Good luck!
 * I also assumed that Hacker News items can be either stories, comments, jobs, Ask HNs and polls as stated in the Items section of the Hacker News API page (https://github.com/HackerNews/API#items).
 
 ###Challenge 2 - Html/CSS
+* (TODO)Since a menu icon was not provided i used one of my choice;
+* (TODO)The color of the transaction info is missing;
+* (TODO)The styles for the transaction type are missing;
+* (TODO)I assumed i could use javascript besides HTML and CSS so i implemented a basic AngularJS app with routing. I used ui-router for the routing instead of ngRoute since it provided more features.
+* (TODO)I used an array with the data provided in the design to populate the app with transaction data instead of copy pasting the HTML by hand.
