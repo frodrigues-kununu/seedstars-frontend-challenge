@@ -7,8 +7,10 @@ $green-font: #16967A;
 $red-font: #E44235;
 $purple-font: #8D52BA; //background-colors
 $light-gray-background-color: #F1F1F1;
-$normal-purple-background-color: #77439E;
-$dark-purple-background-color: #77439E; //header styles
+$light-purple-gradient: #B872EF;
+$dark-purple-gradient: #77439E;
+$dark-purple-background-color: #77439E;
+$light-purple-menu-background-color: #F7F0FC; //header styles
 header {
     position: relative;
     background-color: $dark-purple-background-color;
@@ -25,9 +27,21 @@ header {
         position: absolute;
     }
 }
+body,
+html {
+    overflow-x: hidden;
+}
+//wrapper of the entire app (except for the menu)
+.app-wrapper {
+    transition: transform 0.5s;
+    &.menu-open {
+        transform: translateX(294px);
+    }
+}
 //Balance info styles
 .balance-info-container {
-    background-color: $normal-purple-background-color;
+    text-align: center;
+    background: linear-gradient(left,$light-purple-gradient, $dark-purple-background-color);
 }
 .balance-info-title {
     font-family: ProximaNovaSoft-Regular;
@@ -51,8 +65,12 @@ header {
 .latest-transactions-header {
     background-color: $dark-purple-background-color;
     height: 42px;
+    font-family: ProximaNovaSoft-Medium;
+    font-size: 14px;
+    color: $white-font;
 }
 .latest-transaction-content {
+    height: 65px;
     &:nth-child(odd) {
         background-color: $light-gray-background-color;
     }
@@ -92,11 +110,12 @@ header {
 .menu {
     position: absolute;
     top: 0;
-    left: -294px;
+    left: 0;
     width: 294px;
-    transition: left 0.5s;
+    transform: translateX(-294px);
+    transition: transform 0.5s;
     &.open {
-        left: 0;
+        transform: translateX(0);
     }
     .menu-header {
         height: 153px;
@@ -104,10 +123,37 @@ header {
         background-size: 294px 153px;
         background-repeat: no-repeat;
     }
+    .user-info {}
+    .user-picture {}
+    .user-name {
+        font-family: ProximaNovaSoft-Regular;
+        font-size: 18px;
+        color: $white-font;
+        line-height: 100%;
+    }
     .menu-content {
         height: 568px;
+        padding: 0;
+        list-style-type: none;
     }
     .menu-item {
+        padding-left: 40px;
         height: 55px;
+        padding-top: 12.5px;
+        &:active,
+        &:focus,
+        &:hover {
+            background-color: $light-purple-menu-background-color;
+        }
+        .item-icon {
+            display: inline-block;
+        }
+        .item-name {
+            display: inline-block;
+            font-family: ProximaNovaSoft-Regular;
+            font-size: 16px;
+            color: $purple-font;
+            line-height: 100%;
+        }
     }
 }

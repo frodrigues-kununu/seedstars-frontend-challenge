@@ -1,0 +1,104 @@
+<div class="container-fluid app-wrapper" ng-class="menuIsOpen  ?'menu-open' : ''">
+    <header class="row">
+        <div class="col-xs-12">
+            <div class="menu-button" ng-click="toggleMenu();">
+                <img src="assets/images/SideMenu/ic-dashboard.svg" width: "50" height: "50">
+            </div>
+            <div class="title">Dashboard</div>
+        </div>
+    </header>
+
+    <div class="row balance-info-container">
+        <div class="col-xs-12">
+            <div class="balance-info-title">Balance</div>
+            <div class="balance-info-primary">N 979153.36</div>
+            <div class="balance-info-secondary">16.500 SP</div>
+        </div>
+    </div>
+
+    <div class="row latest-transactions-header">
+        <div class="col-xs-12">
+            Latest Transactions
+        </div>
+    </div>
+
+    <!-- List of transactions -->
+    <div class="row latest-transaction-content" ng-repeat="transaction in transactionsData">
+        <div class="col-xs-12">
+            <div class="row">
+                <div class="col-xs-6">
+                    <div class="transaction-name">{{transaction.name}}</div>
+                </div>
+                <div class="col-xs-6">
+                    <div class="transaction-value">{{transaction.value}}</div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-6">
+                    <div class="transaction-date">{{transaction.date}}</div>
+                </div>
+                <div class="col-xs-6">
+                    <div class="transaction-type">{{transaction.type}}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="menu" ng-class="menuIsOpen ? 'open':''">
+    <div class="menu-header">
+        <div class="user-info">
+            <div class="user-picture">
+                <img src="assets/images/SideMenu/ic-transfers.svg" width: "50" height: "50">
+            </div>
+            <div class="user-name">
+                John Doe
+            </div>
+        </div>
+    </div>
+    <ul class=menu-content>
+        <li class=menu-item>
+            <div class="item-icon">
+                <img src="assets/images/SideMenu/ic-dashboard.svg" width: "30" height: "30">
+            </div>
+            <div class="item-name">Dashboard</div>
+        </li>
+        <li class=menu-item>
+            <div class="item-icon">
+                <img src="assets/images/SideMenu/ic-accounts.svg" width: "30" height: "30">
+            </div>
+            <div class="item-name">Accounts</div>
+        </li>
+        <li class=menu-item>
+            <div class="item-icon">
+                <img src="assets/images/SideMenu/ic-cards.svg" width: "30" height: "30">
+            </div>
+            <div class="item-name">Cards</div>
+        </li>
+        <li class=menu-item>
+            <div class="item-icon">
+                <img src="assets/images/SideMenu/ic-payments.svg" width: "30" height: "30">
+            </div>
+            <div class="item-name">Payments</div>
+        </li>
+        <li class=menu-item>
+            <div class="item-icon">
+                <img src="assets/images/SideMenu/ic-transfers.svg" width: "30" height: "30">
+            </div>
+            <div class="item-name">Transfers</div>
+        </li>
+        <li class=menu-item>
+            <div class="item-icon">
+                <img src="assets/images/SideMenu/ic-airtime.svg" width: "30" height: "30">
+            </div>
+            <div class="item-name">Airtime</div>
+        </li>
+        <li class=menu-item>
+            <div class="item-icon">
+                <img src="assets/images/SideMenu/ic-settings.svg" width: "30" height: "30">
+            </div>
+            <div class="item-name">Settings</div>
+        </li>
+</div>
+</div>
+</div>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="app.module">
 
 <head>
     <meta charset="utf-8" />
@@ -27,140 +27,13 @@
     <script src="../../bower_components/bootstrap/dist/js/bootstrap.min.js" type="text/javascript"></script>
 
     <!-- Include app scripts-->
-    <!-- <script src="js/app.controllers.js" type="text/javascript"></script> -->
+    <script src="js/app.js" type="text/javascript"></script>
+    <script src="js/controllers.js" type="text/javascript"></script>
+    <script src="js/routes.js" type="text/javascript"></script>
 </head>
 
 <body>
-    <div class="container">
-
-        <header class="row">
-            <div class="col-xs-12">
-                <div class="menu-button">
-                    <img src="assets/images/SideMenu/ic-dashboard.svg" width: "50" height: "50">
-                </div>
-                <div class="title">Dashboard</div>
-            </div>
-        </header>
-
-        <div class="row balance-info-container">
-            <div class="col-xs-12">
-                <div class="balance-info-title">Balance</div>
-                <div class="balance-info-primary">N 979153.36</div>
-                <div class="balance-info-secondary">16.500 SP</div>
-            </div>
-        </div>
-
-        <div class="row latest-transactions-header">
-            <div class="col-xs-12">
-                Latest Transactions
-            </div>
-        </div>
-
-        <!-- Latest transactions -->
-        <div class="row latest-transaction-content">
-            <div class="col-xs-12">
-                <div class="row">
-                    <div class="col-xs-6">
-                        <div class="transaction-name">ATM Lagos</div>
-                    </div>
-                    <div class="col-xs-6">
-                        <div class="transaction-value">- N 450.00</div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-xs-6">
-                        <div class="transaction-date">Today</div>
-                    </div>
-                    <div class="col-xs-6">
-                        <div class="transaction-type">Bank Withdraw</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Another transaction -->
-        <div class="row">
-            <div class="col-xs-12">
-                <div class="row">
-                    <div class="col-xs-6">
-                        ATM Lagos
-                    </div>
-                    <div class="col-xs-6">
-                        + N 450.00
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-xs-6">
-                        Yesterday
-                    </div>
-                    <div class="col-xs-6">
-                        Bank Withdraw
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Another transaction -->
-        <div class="row">
-            <div class="col-xs-12">
-                <div class="row">
-                    <div class="col-xs-6">
-                        003 645 6548 65
-                    </div>
-                    <div class="col-xs-6">
-                        - 100 SP
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-xs-6">
-                        01/06/2015
-                    </div>
-                    <div class="col-xs-6">
-                        Airtime recharge
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Another transaction -->
-        <div class="row">
-            <div class="col-xs-12">
-                <div class="row">
-                    <div class="col-xs-6">
-                        John Doe
-                    </div>
-                    <div class="col-xs-6">
-                        + N 450.00
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-xs-6">
-                        31/05/2015
-                    </div>
-                    <div class="col-xs-6">
-                        Transfer
-                    </div>
-                </div>
-            </div>
-        </div>
-
-    </div>
-
-    <div class="menu open">
-        <div class="menu-header"></div>
-        <div class=menu-content>
-            <div class=menu-item>Dashboard</div>
-            <div class=menu-item>Accounts</div>
-            <div class=menu-item>Cards</div>
-            <div class=menu-item>Payments</div>
-            <div class=menu-item>Transfers</div>
-            <div class=menu-item>Airtime</div>
-            <div class=menu-item>Settings</div>
-        </div>
-    </div>
-
-    </div>
-
+    <div ui-view></div>
 </body>
 
 </html>

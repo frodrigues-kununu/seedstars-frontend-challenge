@@ -37,8 +37,27 @@ header .menu-button {
   position: absolute;
 }
 
+body,
+html {
+  overflow-x: hidden;
+}
+
+.app-wrapper {
+  -webkit-transition: -webkit-transform 0.5s;
+  transition: -webkit-transform 0.5s;
+  transition: transform 0.5s;
+  transition: transform 0.5s, -webkit-transform 0.5s;
+}
+
+.app-wrapper.menu-open {
+  -webkit-transform: translateX(294px);
+          transform: translateX(294px);
+}
+
 .balance-info-container {
-  background-color: #77439E;
+  text-align: center;
+  background: -webkit-linear-gradient(left, #B872EF, #77439E);
+  background: linear-gradient(left, #B872EF, #77439E);
 }
 
 .balance-info-title {
@@ -65,6 +84,13 @@ header .menu-button {
 .latest-transactions-header {
   background-color: #77439E;
   height: 42px;
+  font-family: ProximaNovaSoft-Medium;
+  font-size: 14px;
+  color: white;
+}
+
+.latest-transaction-content {
+  height: 65px;
 }
 
 .latest-transaction-content:nth-child(odd) {
@@ -111,14 +137,19 @@ header .menu-button {
 .menu {
   position: absolute;
   top: 0;
-  left: -294px;
+  left: 0;
   width: 294px;
-  -webkit-transition: left 0.5s;
-  transition: left 0.5s;
+  -webkit-transform: translateX(-294px);
+          transform: translateX(-294px);
+  -webkit-transition: -webkit-transform 0.5s;
+  transition: -webkit-transform 0.5s;
+  transition: transform 0.5s;
+  transition: transform 0.5s, -webkit-transform 0.5s;
 }
 
 .menu.open {
-  left: 0;
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
 }
 
 .menu .menu-header {
@@ -128,10 +159,37 @@ header .menu-button {
   background-repeat: no-repeat;
 }
 
+.menu .user-name {
+  font-family: ProximaNovaSoft-Regular;
+  font-size: 18px;
+  color: white;
+  line-height: 100%;
+}
+
 .menu .menu-content {
   height: 568px;
+  padding: 0;
+  list-style-type: none;
 }
 
 .menu .menu-item {
+  padding-left: 40px;
   height: 55px;
+  padding-top: 12.5px;
+}
+
+.menu .menu-item:active, .menu .menu-item:focus, .menu .menu-item:hover {
+  background-color: #F7F0FC;
+}
+
+.menu .menu-item .item-icon {
+  display: inline-block;
+}
+
+.menu .menu-item .item-name {
+  display: inline-block;
+  font-family: ProximaNovaSoft-Regular;
+  font-size: 16px;
+  color: #8D52BA;
+  line-height: 100%;
 }

@@ -3,13 +3,13 @@ angular.module('app.routes', [])
         .config(function ($stateProvider, $urlRouterProvider) {
 
             $stateProvider
-                    .state('home', {
+                    .state('dashboard', {
                         cache: false,
-                        url: '/home',
-                        templateUrl: 'templates/home.html',
-                        controller: 'HomeCtrl'
+                        url: '/dashboard',
+                        templateUrl: 'templates/dashboard.html',
+                        controller: 'DashboardCtrl'
                     });
 
             // if none of the above states are matched, use this as the fallback
-            $urlRouterProvider.otherwise('/home');
+            $urlRouterProvider.otherwise('/dashboard');
         });
