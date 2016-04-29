@@ -1,4 +1,4 @@
-angular.module('infiniteScrollWebApp', ['ngResource', 'infinite-scroll', 'firebase'])
+angular.module('infiniteScrollWebApp', ['infinite-scroll', 'firebase'])
     .controller('InfiniteScrollCtrl', ["$scope", "HackerNewsServices", function($scope, HackerNewsServices) {
 
         //promisse to a $firebaseObject with the current hacker news' largest item id
