@@ -1,16 +1,6 @@
 // import fonts
-@import "fonts"; //variables
-//font-colors
-$white-font: white;
-$gray-font: #959595;
-$green-font: #16967A;
-$red-font: #E44235;
-$purple-font: #8D52BA; //background-colors
-$light-gray-background-color: #F1F1F1;
-$light-purple-gradient: #B872EF;
-$dark-purple-gradient: #77439E;
-$dark-purple-background-color: #77439E;
-$light-purple-menu-background-color: #F7F0FC; //header styles
+@import "fonts";
+@import "colors"; //header styles
 header {
     position: relative;
     background-color: $dark-purple-background-color;
@@ -22,57 +12,117 @@ header {
         font-size: 20px;
         color: $white-font;
         line-height: 100%;
+        padding-top: 18px;
     }
     .menu-button {
         position: absolute;
+        z-index: 10;
+        & > img {
+            cursor: pointer;
+            width: 30px;
+            height: 30px;
+        }
     }
 }
 body,
 html {
     overflow-x: hidden;
+    height: 100%;
+}
+.full-inner-height-width {
+    height: 100%;
 }
 //wrapper of the entire app (except for the menu)
 .app-wrapper {
-    transition: transform 0.5s;
+    position: relative;
+    height: 100%;
+    transition: all 0.5s;
     &.menu-open {
         transform: translateX(294px);
+    }
+}
+.app-wrapper-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0;
+    opacity: 0;
+    background-color: #000000;
+    z-index: 5;
+    transition: opacity 0.5s, width 0s 0.5s;
+    &.menu-open {
+        opacity: 0.5;
+        width: 100%;
+        transition: opacity 0.5s;
     }
 }
 //Balance info styles
 .balance-info-container {
     text-align: center;
-    background: linear-gradient(left,$light-purple-gradient, $dark-purple-background-color);
+    background: linear-gradient(to right,$light-purple-gradient, $dark-purple-background-color);
 }
 .balance-info-title {
     font-family: ProximaNovaSoft-Regular;
     font-size: 18px;
     color: $white-font;
     line-height: 100%;
+    padding: 30px 0 10px;
 }
 .balance-info-primary {
     font-family: ProximaNovaSoft-Semibold;
     font-size: 32px;
     color: $white-font;
     line-height: 119%;
+    padding: 10px 0;
 }
 .balance-info-secondary {
     font-family: ProximaNovaSoft-Semibold;
     font-size: 24px;
     color: $white-font;
     line-height: 121%;
+    padding: 10px 0;
+}
+.carousel-items {
+    list-style: none;
+    padding: 10px 0;
+    li {
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        background-color: white;
+        border-radius: 5px;
+        &:nth-child(2) {
+            opacity: 0.5;
+        }
+    }
 }
 //latest transactions styles
 .latest-transactions-header {
     background-color: $dark-purple-background-color;
     height: 42px;
-    font-family: ProximaNovaSoft-Medium;
-    font-size: 14px;
-    color: $white-font;
+    .header-text {
+        font-family: ProximaNovaSoft-Medium;
+        font-size: 14px;
+        line-height: 100%;
+        color: $white-font;
+        margin-top: 14px;
+    }
 }
+// Since the containing row should have 65px and all the text inside has an heigth of 16px then
+// there is 65-32 = 33px leftover space. By distributing the remaining space evenly we get 11px for each "white space".
 .latest-transaction-content {
-    height: 65px;
-    &:nth-child(odd) {
+    // height: 65px;
+    background-color: white;
+    &:nth-child(even) {
         background-color: $light-gray-background-color;
+    }
+    .row:nth-child(1) {
+        padding-bottom: 11px;
+        padding-top: 11px;
+    }
+    .row:nth-child(2) {
+        margin-bottom: 11px;
     }
 }
 .transaction-name {
@@ -87,24 +137,26 @@ html {
     color: $gray-font;
     line-height: 115%;
     opacity: 0.6;
+    text-align: right;
+    &.credit {
+        color: $green-font;
+    }
+    &.debit {
+        color: $red-font;
+    }
 }
 .transaction-date {
     font-family: ProximaNovaSoft-Medium;
     font-size: 14px;
     line-height: 115%;
     opacity: 0.6;
-    .credit {
-        color: $green-font;
-    }
-    .debit {
-        color: $red-font;
-    }
 }
 .transaction-type {
     font-family: ProximaNovaSoft-Medium;
     font-size: 14px;
     color: $gray-font;
     line-height: 115%;
+    text-align: right;
 }
 //menu styles
 .menu {
@@ -118,28 +170,41 @@ html {
         transform: translateX(0);
     }
     .menu-header {
+        position: relative;
         height: 153px;
         background: url("../assets/images/SideMenu/menu-header-bg.png");
         background-size: 294px 153px;
         background-repeat: no-repeat;
     }
-    .user-info {}
-    .user-picture {}
+    .user-info {
+        position: absolute;
+        bottom: 30px;
+        left: 20px;
+    }
+    .user-picture {
+        display: inline-block;
+        & > img {
+            width: 50px;
+            height: 50px;
+            border-radius: 25px;
+        }
+    }
     .user-name {
+        display: inline-block;
         font-family: ProximaNovaSoft-Regular;
         font-size: 18px;
         color: $white-font;
         line-height: 100%;
     }
     .menu-content {
-        height: 568px;
+        max-height: 568px;
         padding: 0;
-        list-style-type: none;
+        list-style: none;
     }
     .menu-item {
-        padding-left: 40px;
         height: 55px;
-        padding-top: 12.5px;
+        padding-left: 20px;
+        cursor: pointer;
         &:active,
         &:focus,
         &:hover {
@@ -147,6 +212,11 @@ html {
         }
         .item-icon {
             display: inline-block;
+            padding-top: 12.5px;
+            & > img {
+                width: 30px;
+                height: 30px;
+            }
         }
         .item-name {
             display: inline-block;
@@ -154,6 +224,7 @@ html {
             font-size: 16px;
             color: $purple-font;
             line-height: 100%;
+            padding-top: 19.5px;
         }
     }
 }

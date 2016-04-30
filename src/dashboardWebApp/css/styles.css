@@ -31,22 +31,35 @@ header .title {
   font-size: 20px;
   color: white;
   line-height: 100%;
+  padding-top: 18px;
 }
 
 header .menu-button {
   position: absolute;
+  z-index: 10;
+}
+
+header .menu-button > img {
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
 }
 
 body,
 html {
   overflow-x: hidden;
+  height: 100%;
+}
+
+.full-inner-height-width {
+  height: 100%;
 }
 
 .app-wrapper {
-  -webkit-transition: -webkit-transform 0.5s;
-  transition: -webkit-transform 0.5s;
-  transition: transform 0.5s;
-  transition: transform 0.5s, -webkit-transform 0.5s;
+  position: relative;
+  height: 100%;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
 }
 
 .app-wrapper.menu-open {
@@ -54,10 +67,30 @@ html {
           transform: translateX(294px);
 }
 
+.app-wrapper-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0;
+  opacity: 0;
+  background-color: #000000;
+  z-index: 5;
+  -webkit-transition: opacity 0.5s, width 0s 0.5s;
+  transition: opacity 0.5s, width 0s 0.5s;
+}
+
+.app-wrapper-overlay.menu-open {
+  opacity: 0.5;
+  width: 100%;
+  -webkit-transition: opacity 0.5s;
+  transition: opacity 0.5s;
+}
+
 .balance-info-container {
   text-align: center;
   background: -webkit-linear-gradient(left, #B872EF, #77439E);
-  background: linear-gradient(left, #B872EF, #77439E);
+  background: linear-gradient(to right, #B872EF, #77439E);
 }
 
 .balance-info-title {
@@ -65,6 +98,7 @@ html {
   font-size: 18px;
   color: white;
   line-height: 100%;
+  padding: 30px 0 10px;
 }
 
 .balance-info-primary {
@@ -72,6 +106,7 @@ html {
   font-size: 32px;
   color: white;
   line-height: 119%;
+  padding: 10px 0;
 }
 
 .balance-info-secondary {
@@ -79,22 +114,54 @@ html {
   font-size: 24px;
   color: white;
   line-height: 121%;
+  padding: 10px 0;
+}
+
+.carousel-items {
+  list-style: none;
+  padding: 10px 0;
+}
+
+.carousel-items li {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background-color: white;
+  border-radius: 5px;
+}
+
+.carousel-items li:nth-child(2) {
+  opacity: 0.5;
 }
 
 .latest-transactions-header {
   background-color: #77439E;
   height: 42px;
+}
+
+.latest-transactions-header .header-text {
   font-family: ProximaNovaSoft-Medium;
   font-size: 14px;
+  line-height: 100%;
   color: white;
+  margin-top: 14px;
 }
 
 .latest-transaction-content {
-  height: 65px;
+  background-color: white;
 }
 
-.latest-transaction-content:nth-child(odd) {
+.latest-transaction-content:nth-child(even) {
   background-color: #F1F1F1;
+}
+
+.latest-transaction-content .row:nth-child(1) {
+  padding-bottom: 11px;
+  padding-top: 11px;
+}
+
+.latest-transaction-content .row:nth-child(2) {
+  margin-bottom: 11px;
 }
 
 .transaction-name {
@@ -110,6 +177,15 @@ html {
   color: #959595;
   line-height: 115%;
   opacity: 0.6;
+  text-align: right;
+}
+
+.transaction-value.credit {
+  color: #16967A;
+}
+
+.transaction-value.debit {
+  color: #E44235;
 }
 
 .transaction-date {
@@ -119,19 +195,12 @@ html {
   opacity: 0.6;
 }
 
-.transaction-date .credit {
-  color: #16967A;
-}
-
-.transaction-date .debit {
-  color: #E44235;
-}
-
 .transaction-type {
   font-family: ProximaNovaSoft-Medium;
   font-size: 14px;
   color: #959595;
   line-height: 115%;
+  text-align: right;
 }
 
 .menu {
@@ -153,13 +222,31 @@ html {
 }
 
 .menu .menu-header {
+  position: relative;
   height: 153px;
   background: url("../assets/images/SideMenu/menu-header-bg.png");
   background-size: 294px 153px;
   background-repeat: no-repeat;
 }
 
+.menu .user-info {
+  position: absolute;
+  bottom: 30px;
+  left: 20px;
+}
+
+.menu .user-picture {
+  display: inline-block;
+}
+
+.menu .user-picture > img {
+  width: 50px;
+  height: 50px;
+  border-radius: 25px;
+}
+
 .menu .user-name {
+  display: inline-block;
   font-family: ProximaNovaSoft-Regular;
   font-size: 18px;
   color: white;
@@ -167,15 +254,15 @@ html {
 }
 
 .menu .menu-content {
-  height: 568px;
+  max-height: 568px;
   padding: 0;
-  list-style-type: none;
+  list-style: none;
 }
 
 .menu .menu-item {
-  padding-left: 40px;
   height: 55px;
-  padding-top: 12.5px;
+  padding-left: 20px;
+  cursor: pointer;
 }
 
 .menu .menu-item:active, .menu .menu-item:focus, .menu .menu-item:hover {
@@ -184,6 +271,12 @@ html {
 
 .menu .menu-item .item-icon {
   display: inline-block;
+  padding-top: 12.5px;
+}
+
+.menu .menu-item .item-icon > img {
+  width: 30px;
+  height: 30px;
 }
 
 .menu .menu-item .item-name {
@@ -192,4 +285,5 @@ html {
   font-size: 16px;
   color: #8D52BA;
   line-height: 100%;
+  padding-top: 19.5px;
 }

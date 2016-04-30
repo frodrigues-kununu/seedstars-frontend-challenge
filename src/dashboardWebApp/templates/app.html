@@ -1,0 +1,71 @@
+<div class="container-fluid app-wrapper" ng-class="menuIsOpen  ?'menu-open' : ''">
+    <header class="row">
+        <div class="col-xs-12">
+            <div class="menu-button" ng-click="toggleMenu();">
+                <img src="assets/images/SideMenu/bars.svg" alt="menu">
+            </div>
+            <!-- Show the page title. Defaults to "Dashboard" (default state) if the pageTitle variable is not defined -->
+            <div class="title">{{pageTitle || "Dashboard"}}</div>
+        </div>
+    </header>
+    <!-- app-wrapper overlay -->
+    <div class="app-wrapper-overlay" ng-class="menuIsOpen  ?'menu-open' : ''"></div>
+    <!-- child states html templates are injected here -->
+    <div ui-view></div>
+</div>
+
+<div class="menu" ng-class="menuIsOpen ? 'open':''">
+    <div class="menu-header">
+        <div class="user-info">
+            <div class="user-picture">
+                <img src="assets/images/SideMenu/user.jpg" alt="ic-transfers">
+            </div>
+            <div class="user-name">
+                John Doe
+            </div>
+        </div>
+    </div>
+    <ul class=menu-content>
+        <li class=menu-item ng-click="goToPage('Dashboard')">
+            <div class="item-icon">
+                <img src="assets/images/SideMenu/ic-dashboard.svg" alt="ic-dashboard">
+            </div>
+            <div class="item-name">Dashboard</div>
+        </li>
+        <li class=menu-item ng-click="goToPage('Accounts')">
+            <div class="item-icon">
+                <img src="assets/images/SideMenu/ic-accounts.svg" alt="ic-accounts">
+            </div>
+            <div class="item-name">Accounts</div>
+        </li>
+        <li class=menu-item ng-click="goToPage('Cards')">
+            <div class="item-icon">
+                <img src="assets/images/SideMenu/ic-cards.svg" alt="ic-cards">
+            </div>
+            <div class="item-name">Cards</div>
+        </li>
+        <li class=menu-item ng-click="goToPage('Payments')">
+            <div class="item-icon">
+                <img src="assets/images/SideMenu/ic-payments.svg" alt="ic-payments">
+            </div>
+            <div class="item-name">Payments</div>
+        </li>
+        <li class=menu-item ng-click="goToPage('Transfers')">
+            <div class="item-icon">
+                <img src="assets/images/SideMenu/ic-transfers.svg" alt="ic-transfers">
+            </div>
+            <div class="item-name">Transfers</div>
+        </li>
+        <li class=menu-item ng-click="goToPage('Airtime')">
+            <div class="item-icon">
+                <img src="assets/images/SideMenu/ic-airtime.svg" alt="ic-airtime">
+            </div>
+            <div class="item-name">Airtime</div>
+        </li>
+        <li class=menu-item ng-click="goToPage('Settings')">
+            <div class="item-icon">
+                <img src="assets/images/SideMenu/ic-settings.svg" alt="ic-settings">
+            </div>
+            <div class="item-name">Settings</div>
+        </li>
+</div>
