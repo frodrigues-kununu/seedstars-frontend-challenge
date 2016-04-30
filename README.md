@@ -44,7 +44,7 @@ Good luck!
 * I assumed i could use javascript besides HTML and CSS so i implemented a basic AngularJS app with routing.
 
 ##Build the apps
-Theapp required npm (to install and run gulp, bower, as well as a node http-server if needed) and bower (to install frontend dependencies) and git. YOu might need to prefix the following commands with `sudo`.
+The app requires node, npm (to install and run gulp, bower, as well as a node http-server if needed) and bower (to install frontend dependencies) and git. You might need to prefix the following commands with `sudo`.
 
 Download the project into your computer by running `git clone https://github.com/scorchloh/seedstars-frontend-challenge.git`
 Download and install Node from https://nodejs.org/en/;
