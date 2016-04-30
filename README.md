@@ -58,12 +58,12 @@ To test this app simply navigate from the root of the project to `/src/infiniteS
 The result should look like this:
 ![infiniteScrollApp Gif](/gifs/infiniteScrollApp.gif?raw=true "infiniteScrollWebApp")
 
-###Dashboard Web App (###Challenge 2 - Html/CSS)
+###Dashboard Web App (Challenge 2 - Html/CSS)
 There are 2 ways to run this app. The first and easiest one is to navigate from the root of the project to `/src/dashboardWebApp` and open the index.html file on Firefox.
 
 In case you want to test the app using Google Chrome a Web Server is needed. Either create a project on an IDE (like Netbeans) and run it from there or, if you installed the node modules dependencies earlier, open the terminal and type the following command `http-server`. This should start an http-server. You can then view the webpage by acessing http://localhost:8080/src/dashboardWebApp in your browser. This is needed because Google Chrome restricts XHR calls when using the `file://` protocol, and the routing library i used makes XHR requests when changing states.
 Either way, the result should look like this:
-![dashboardApp Gif](/gifs/dashboardScrollApp.gif?raw=true "dashboardScrollWebApp")
+![dashboardApp Gif](/gifs/dashboardApp.gif?raw=true "dashboardScrollWebApp")
 
 ##gulp
 The gulp default task compiles the sass files from the folder `/src/dashboardWebApp/sass` to css and writes the result in `/src/dashboardWebApp/css`, afterwards it will watch for changes made to the `/src/dashboardWebApp/sass` and recompile the files if a change occurs.
