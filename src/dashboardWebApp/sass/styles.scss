@@ -30,7 +30,7 @@ html {
     height: 100%;
 }
 body{
-  min-height: 294px; 
+  min-height: 294px;
   overflow: hidden;
 }
 .full-inner-height-width {
@@ -140,7 +140,6 @@ body{
     font-size: 14px;
     color: $gray-font;
     line-height: 115%;
-    opacity: 0.6;
     text-align: right;
     &.credit {
         color: $green-font;
