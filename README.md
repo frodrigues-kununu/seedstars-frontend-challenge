@@ -70,7 +70,7 @@ Either way, the result should look like this:
 ##gulp
 The **gulp** default task compiles the sass files from the folder `/src/dashboardWebApp/sass` to css and writes the result in `/src/dashboardWebApp/css`, afterwards it will watch for changes made to the `/src/dashboardWebApp/sass` and recompile the files if a change occurs.
 
-###Browsers tested on
+##Browsers tested on
 Both web applications were tested on:
 * Google Chrome 49.0.2623.112
 * Mozilla Firefox 45.0.2
