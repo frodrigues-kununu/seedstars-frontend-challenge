@@ -33,7 +33,7 @@ challenge let us know and share your thoughts on the problems/solutions.
 
 Good luck!
 
-##Challenge Considerations
+##Challenge Assumptions
 
 ###Challenge 1 - Javascript
 * I assumed that i could use third party libraries and directives. I used ngInfiniteScroll (https://github.com/sroze/ngInfiniteScroll) to implement the infinite scroll functionality.
