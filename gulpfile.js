@@ -32,4 +32,4 @@ gulp.task('watch', function() {
 });
 
 //gulp default task
-gulp.task('default', ['sass', 'watch' /*, possible other tasks... */ ]);
+gulp.task('default', ['sass', 'watch']);
