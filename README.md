@@ -52,7 +52,7 @@ The app requires **Node**, **npm** (to install and run **gulp**, **bower**, as w
 Afterwards open the command prompt / terminal and run the following commands (you might need to prefix some of them with `sudo`):
 
 * Download the project into your computer by running `git clone https://github.com/scorchloh/seedstars-frontend-challenge.git`
-* Navigate to the `/seedstar-frontend-challenge` folder
+* Navigate to the `seedstar-frontend-challenge` folder
 * Install the **Node modules** required by running `npm install`
 * Install **bower** `npm install -g bower`
 * Install frontend dependencies by running `bower install`
