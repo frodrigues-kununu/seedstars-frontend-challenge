@@ -62,10 +62,17 @@ The result should look like this:
 ###Dashboard Web App (Challenge 2 - Html/CSS)
 There are 2 ways to run this app. The first and easiest one is to navigate from the root of the project to `/src/dashboardWebApp` and open the **index.html** file on **Firefox**.
 
-In case you want to test the app using **Google Chrome** a Web Server is needed. Either create a project on an IDE (like Netbeans) and run it from there or, if you installed the node modules dependencies earlier, open the terminal and type the following command `http-server`. This should start an **http server**. You can then view the webpage by acessing http://localhost:8080/src/dashboardWebApp/ in your browser. This is needed because **Google Chrome** restricts XHR calls when using the `file://` protocol, and the routing library i used makes XHR requests when changing states.
+In case you want to test the app using **Google Chrome** a Web Server is needed. Either create a project on an IDE (like Netbeans) and run it from there or, if you installed the node modules dependencies earlier, open the terminal and type the following command `http-server`. This should start an **http server**. You can then view the webpage by acessing http://localhost:8080/src/dashboardWebApp/ in your browser. This is needed because **Google Chrome** restricts XHR calls when using the `file://` protocol and AngularJS templates are downloaded via XHR.
 Either way, the result should look like this:
 
 ![dashboardApp Gif](http://i.imgur.com/34fpXRz.gif "dashboardScrollWebApp")
 
 ##gulp
 The **gulp** default task compiles the sass files from the folder `/src/dashboardWebApp/sass` to css and writes the result in `/src/dashboardWebApp/css`, afterwards it will watch for changes made to the `/src/dashboardWebApp/sass` and recompile the files if a change occurs.
+
+###Browsers tested on
+Both web applications were tested on:
+* Google Chrome 49.0.2623.112
+* Mozilla Firefox 45.0.2
+* Microsoft Edge 25.10586.0.0
+* Internet Explorer 11.212.10586.0 (although the fonts are not rendering correctly)
