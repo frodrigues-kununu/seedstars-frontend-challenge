@@ -62,7 +62,7 @@ Afterwards open the command prompt / terminal and run the following commands (yo
 To test this app simply navigate from the root of the project to `/src/infiniteScrollWebApp` and open the **index.html** file on a browser. The web app lists new items before they are listed hacker news.
 The result should look like this:
 
-![infiniteScrollApp Gif](http://i.imgur.com/wzJq7nU.gif "infiniteScrollWebApp")
+![infiniteScrollApp Gif](http://i.imgur.com/jscfMAV.gif "infiniteScrollWebApp")
 
 ###Dashboard Web App (Challenge 2 - Html/CSS)
 There are 2 ways to run this app. The first and easiest one is to navigate from the root of the project to `/src/dashboardWebApp` and open the **index.html** file on **Firefox**.

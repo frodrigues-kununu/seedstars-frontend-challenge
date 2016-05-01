@@ -29,9 +29,9 @@ html {
     overflow-x: hidden;
     height: 100%;
 }
-body{
-  min-height: 294px;
-  overflow: hidden;
+body {
+    min-height: 294px;
+    overflow: hidden;
 }
 .full-inner-height-width {
     height: 100%;
@@ -152,6 +152,7 @@ body{
     font-family: ProximaNovaSoft-Medium;
     font-size: 14px;
     line-height: 115%;
+    color: $gray-font;
     opacity: 0.6;
 }
 .transaction-type {
