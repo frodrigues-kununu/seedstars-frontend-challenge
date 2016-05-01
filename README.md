@@ -44,10 +44,10 @@ Good luck!
 * I assumed i could use javascript besides HTML and CSS so i implemented a basic AngularJS app with routing.
 
 ##Build the apps
-The app requires **Node**, **npm** (to install and run **gulp**, **bower**, as well as a node **http-server** if needed) and **bower** (to install frontend dependencies) and git. You might need to prefix the following commands with `sudo`.
+The app requires **Node**, **npm** (to install and run **gulp**, **bower**, as well as a node **http-server** if needed) and **bower** (to install frontend dependencies) and **git**. You might need to prefix some of the following commands with `sudo`.
 
 * Download the project into your computer by running `git clone https://github.com/scorchloh/seedstars-frontend-challenge.git`
-* Download and install **Node** from https://nodejs.org/en/;
+* Download and install **Node** from https://nodejs.org/en/
 * Install the **Node modules** required by running `npm install`
 * Install **bower** `npm install -g bower`
 * Install frontend dependencies by running `bower install`
@@ -57,15 +57,15 @@ The app requires **Node**, **npm** (to install and run **gulp**, **bower**, as w
 To test this app simply navigate from the root of the project to `/src/infiniteScrollWebApp` and open the **index.html** file on a browser. The web app lists new items before they are listed hacker news.
 The result should look like this:
 
-![infiniteScrollApp Gif](/gifs/infiniteScrollApp.gif?raw=true "infiniteScrollWebApp")
+![infiniteScrollApp Gif](http://i.imgur.com/wzJq7nU.gif "infiniteScrollWebApp")
 
 ###Dashboard Web App (Challenge 2 - Html/CSS)
 There are 2 ways to run this app. The first and easiest one is to navigate from the root of the project to `/src/dashboardWebApp` and open the **index.html** file on **Firefox**.
 
-In case you want to test the app using **Google Chrome** a Web Server is needed. Either create a project on an IDE (like Netbeans) and run it from there or, if you installed the node modules dependencies earlier, open the terminal and type the following command `http-server`. This should start an **http-server**. You can then view the webpage by acessing http://localhost:8080/src/dashboardWebApp in your browser. This is needed because **Google Chrome** restricts XHR calls when using the `file://` protocol, and the routing library i used makes XHR requests when changing states.
+In case you want to test the app using **Google Chrome** a Web Server is needed. Either create a project on an IDE (like Netbeans) and run it from there or, if you installed the node modules dependencies earlier, open the terminal and type the following command `http-server`. This should start an **http server**. You can then view the webpage by acessing http://localhost:8080/src/dashboardWebApp/ in your browser. This is needed because **Google Chrome** restricts XHR calls when using the `file://` protocol, and the routing library i used makes XHR requests when changing states.
 Either way, the result should look like this:
 
-![dashboardApp Gif](/gifs/dashboardApp.gif?raw=true "dashboardScrollWebApp")
+![dashboardApp Gif](http://i.imgur.com/34fpXRz.gif "dashboardScrollWebApp")
 
 ##gulp
 The **gulp** default task compiles the sass files from the folder `/src/dashboardWebApp/sass` to css and writes the result in `/src/dashboardWebApp/css`, afterwards it will watch for changes made to the `/src/dashboardWebApp/sass` and recompile the files if a change occurs.
