@@ -153,6 +153,7 @@ body {
 }
 
 .latest-transaction-content {
+  height: 65px;
   background-color: white;
 }
 

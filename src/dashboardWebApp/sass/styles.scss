@@ -116,7 +116,7 @@ body {
 // Since the containing row should have 65px and all the text inside has an heigth of 16px then
 // there is 65-32 = 33px leftover space. By distributing the remaining space evenly we get 11px for each "white space".
 .latest-transaction-content {
-    // height: 65px;
+    height: 65px;
     background-color: white;
     &:nth-child(even) {
         background-color: $light-gray-background-color;
