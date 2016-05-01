@@ -46,14 +46,14 @@ Good luck!
 ##Build the apps
 The app requires **Node**, **npm** (to install and run **gulp**, **bower**, as well as a node **http-server** if needed), **bower** (to install frontend dependencies) and **git**.
 
-* If you don't have git installed, download and install it by following the instructions specified on https://git-scm.com/book/en/v2/Getting-Started-Installing-Git/
+* If you don't have **git** installed, download and install it by following the instructions specified on https://git-scm.com/book/en/v2/Getting-Started-Installing-Git/
 * Download and install **Node** from https://nodejs.org/en/
 
 Afterwards open the command prompt / terminal and run the following commands (you might need to prefix some of them with `sudo`):
 
 * Download the project into your computer by running `git clone https://github.com/scorchloh/seedstars-frontend-challenge.git`
 * Navigate to the `seedstar-fronend-challenge` folder
-* Install the **Node modules** required by running `npm install`.
+* Install the **Node modules** required by running `npm install`
 * Install **bower** `npm install -g bower`
 * Install frontend dependencies by running `bower install`
 
