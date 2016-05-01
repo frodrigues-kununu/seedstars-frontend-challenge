@@ -1,9 +1,6 @@
 var gulp = require('gulp');
 var sass = require('gulp-sass');
 var autoprefixer = require('gulp-autoprefixer');
-var browserSync = require('browser-sync').create();
-var reload = browserSync.reload;
-
 
 var input = './src/dashboardWebApp/sass/*.scss';
 var output = './src/dashboardWebApp/css';
@@ -32,19 +29,6 @@ gulp.task('watch', function() {
         .on('change', function(event) {
             console.log('File ' + event.path + ' was ' + event.type + ', running tasks...');
         });
-});
-
-//watch for changes in html and reload page
-gulp.task('watchHTML', function () {
-
-    // Serve files from the root of this project
-    browserSync.init({
-        server: {
-            baseDir: "./src/dashboardWebApp"
-        }
-    });
-
-    gulp.watch("*.html").on("change", reload);
 });
 
 //gulp default task
